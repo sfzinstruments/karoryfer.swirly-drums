@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<Key>C6484ED74C54C0B3A157044D22E0903C0D075B1B741EB7205B1362D7CA0C21B359E0969D7C2D87B57C0443740638CA549D622BC577E005E9B0436A150ADEE849F06735202F01E6590BC8C6B508C50256DF0B1C53A98BB60A9058DC7C2812D860E0B7394D3E5C286A2C7A803A0D8077AFE5BB969DD24D39CEEEEE8C39DC920C98224FD7AD25C153D6EAB6221A38DEE002E1E471F446421EC004E4B3E54F6A5DD7B66995CD43B5C2ED8F22B70D176FD29979DCF4B86177BBDFF7F6B6132370C69D3F9AA733C2ED2F5E6173F615226AF4B696BA8A45D227CDD76F030FB962165E4FC1BC27FFF140E95FFA5D1F8B3FBB15381599891457692335A2342244BAE66E1F</Key>
+<AriaBank id="2516" name="Swirly Drums" vendor="Karoryfer" product="Swirly Drums" version="1000" >
+
+    <Define name="$sample_dir" value="../Samples"/>
+    <AriaGUI path="GUI/aria_info.xml"  target="*ARIA_INFO" />    
+
+    <AriaProgram  name="1 - Full kit"        gui="GUI/Full_kit.xml">        <AriaElement  path="Programs/Full_kit.sfz"/>       </AriaProgram>
+    <AriaProgram  name="2 - Basic kit"       gui="GUI/Basic_kit.xml" >      <AriaElement  path="Programs/Basic_kit.sfz"/>      </AriaProgram>
+    <AriaProgram  name="3 - Kick bus"        gui="GUI/Kick_bus.xml" >       <AriaElement  path="Programs/Kick_bus.sfz"/>       </AriaProgram>
+    <AriaProgram  name="4 - Snare bus"       gui="GUI/Snare_bus.xml" >      <AriaElement  path="Programs/Snare_bus.sfz"/>      </AriaProgram>
+    <AriaProgram  name="5 - Hi-hat bus"      gui="GUI/Hi_hat_bus.xml" >     <AriaElement  path="Programs/Hi_hat_bus.sfz"/>     </AriaProgram>               
+    <AriaProgram  name="6 - Tom bus"         gui="GUI/Tom_bus.xml" >        <AriaElement  path="Programs/Tom_bus.sfz"/>        </AriaProgram>    
+    <AriaProgram  name="7 - Cymbal bus"      gui="GUI/Cymbal_bus.xml" >     <AriaElement  path="Programs/Cymbal_bus.sfz"/>     </AriaProgram>    
+    <AriaProgram  name="8 - Percussion bus"  gui="GUI/Percussion_bus.xml" > <AriaElement  path="Programs/Percussion_bus.sfz"/> </AriaProgram>                                                                           
+</AriaBank>

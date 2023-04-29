@@ -1,0 +1,17 @@
+//Crash key
+#define $CRSHKEY 49
+
+//Ride key
+#define $RIDEKEY 51
+
+//Splash key
+#define $SPLSHKEY 55
+
+//China key
+#define $CHNAKEY 53
+
+//Broken crash key
+#define $CRSH2KEY 57
+
+//Cracked splash key
+#define $SPLSH2KEY 59

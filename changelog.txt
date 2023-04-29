@@ -1,0 +1,33 @@
+1.104:
+Old GUI folder removed.
+License changed to free.
+
+1.103:
+Changed the faders to fix a display issue on some systems.
+
+1.102:
+Changed some colors in the GUI to fix an issue with the pedal and stir curve display on some Windows systems.
+
+1.101:
+Fixed the a bug in the Kontakt keymap editing script.
+Added more information about how panning works in Kontakt to the manual.
+
+1.100:
+Added Kontakt version.
+Cleaned up low-frequency noise in cowbell samples.
+Added stir curve shape control.
+Changed the hi-hat pedal position control in the GUI to a drop-down list.
+Fixed the file path slash inconsistency for Mac users again.
+
+1.004:
+Cleaned up extraneous noises in a few cymbal decay tails.
+
+1.003:
+Changed MIDI CC assignments for high bongo, to prevent itself from tuning itself down in FL Studio projects.
+
+1.002:
+Changed fader graphics, because they did not appear on systems with certain graphics card hardware.
+Improved the installation instructions in the manual, and also fixed a few minor errors in the MIDI CC list.
+
+1.001:
+Fixed file path slash inconsistency, which caused problems on Macs.

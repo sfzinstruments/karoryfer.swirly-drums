@@ -1,0 +1,89 @@
+<GUI w="775" h="335">
+
+	<!-- Snare bus with all controls -->
+ 
+	<!-- Background -->
+
+	<StaticImage x="0" y="0" w="773" h="333" image="drums_bus_controls_tab.png" transparent="0"  />
+	
+	<!-- Controls - Snare-->
+	
+	<StaticText x="107" y="58" w="100" h="20" text="SNARE MIX" color_text="#FFFFFFFF" transparent="1"  />
+
+	<StaticText x="27" y="88" w="50" h="18" text="Top" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Slider param="50" x="46" y="114" w="12" h="91" orientation="vertical"  image_handle="fader_handle.png" image_bg="fader_slot_91.png"  />
+
+	<StaticText x="77" y="88" w="50" h="18" text="Bottom" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Slider param="51" x="96" y="114" w="12" h="91" orientation="vertical"  image_handle="fader_handle.png" image_bg="fader_slot_91.png"  />
+
+	<StaticText x="130" y="88" w="50" h="18" text="Pan" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Knob param="52" x="140" y="110" image="Drum_knob.png" frames="128"  />
+
+	<StaticText x="130" y="158" w="50" h="18" text="Tune" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Knob param="53" x="140" y="180" image="Drum_knob.png" frames="128"  />
+
+	<StaticText x="180" y="88" w="50" h="18" text="Ambience" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Knob param="60" x="190" y="110" image="Drum_knob.png" frames="128"  />
+
+	<StaticText x="180" y="158" w="50" h="18" text="Deaden" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Knob param="54" x="190" y="180" image="Drum_knob.png" frames="128"  />
+
+	<StaticText x="227" y="68" w="50" h="18" text="Dig" color_text="#FFFFFFFF" transparent="1"   />
+
+	<StaticText x="227" y="78" w="50" h="18" text="Release" color_text="#FFFFFFFF" transparent="1"   />
+
+	<StaticText x="227" y="88" w="50" h="18" text="Noise" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Slider param="49" x="246" y="114" w="12" h="91" orientation="vertical"  image_handle="fader_handle.png" image_bg="fader_slot_91.png"  />
+
+	<StaticText x="357" y="58" w="100" h="20" text="KICK BUZZ" color_text="#FFFFFFFF" transparent="1" />
+
+	<StaticText x="357" y="88" w="50" h="18" text="Volume" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Slider param="42" x="376" y="114" w="12" h="91" orientation="vertical"  image_handle="fader_handle.png" image_bg="fader_slot_91.png"  />
+
+	<StaticText x="405" y="88" w="50" h="18" text="Attack" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Knob param="43" x="415" y="110" image="Drum_knob.png" frames="128"  />
+
+	<StaticText x="405" y="158" w="50" h="18" text="Offset" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Knob param="44" x="415" y="180" image="Drum_knob.png" frames="128"  />
+
+	<StaticText x="562" y="58" w="100" h="20" text="STIRS" color_text="#FFFFFFFF" transparent="1" />
+
+	<StaticText x="537" y="88" w="50" h="18" text="Volume" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Slider param="57" x="556" y="114" w="12" h="91" orientation="vertical"  image_handle="fader_handle.png" image_bg="fader_slot_91.png"  />
+
+	<StaticText x="587" y="88" w="50" h="18" text="Time" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Slider param="55" x="606" y="114" w="12" h="91" orientation="vertical"  image_handle="fader_handle.png" image_bg="fader_slot_91.png"  />
+
+	<StaticText x="637" y="88" w="50" h="18" text="Tail" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Slider param="56" x="656" y="114" w="12" h="91" orientation="vertical"  image_handle="fader_handle.png" image_bg="fader_slot_91.png"  />
+
+	<StaticText x="680" y="88" w="50" h="18" text="Curve" color_text="#FFFFFFFF" transparent="1"   />
+
+	<OptionMenu    param="14"  x="680"  y="114"  w="50" h="18"  font_size="Small" alignment="center" color_text="#000000FF"  
+color_back="#C6A24EFF" transparent="0"   >
+		<OptionItem name="Flat"		    value="0" />
+		<OptionItem name="Moderate"		    value="0.5" />
+		<OptionItem name="Heavy"    value="1" />	
+	</OptionMenu>
+
+
+	<StaticText x="680" y="148" w="50" h="18" text="Legato" color_text="#FFFFFFFF" transparent="1"   />
+
+	<StaticText x="680" y="158" w="50" h="18" text="Release" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Knob param="58" x="690" y="180" image="Drum_knob.png" frames="128"  />
+
+</GUI>                                                                                                                                       

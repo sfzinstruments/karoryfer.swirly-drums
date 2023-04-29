@@ -1,0 +1,115 @@
+//Karoryfer Swirly Drums
+//Hi-hat bus
+
+//Hi-hat keymap, including the paramters for making the pedal work in either direction
+//Edit that file if the hi-hat notes or pedal ranges need remapping
+
+#include "keymaps/keymap_hi_hat.sfz"
+
+//Hi-hat parameters
+
+#define $HTVOL 70
+#define $HTPAN 71
+#define $HTTUNE 72
+
+#define $HTENV 73
+#define $HATWET 61
+#define $HTPEDAL 4
+
+#define $HTNOISEVOL 69
+
+//Hi-hat mute groups - more closed mutes more open, splash mutes itself
+
+#define $HTSPLGRP 10
+#define $HTFOOTGRP 11
+#define $HTIGHTGRP 12
+#define $HTCLOSEGRP 13
+#define $HTLOOSEGRP 14
+#define $HTQTRGRP 15
+#define $HTHALFGRP 16
+#define $HTOPENGRP 17
+#define $HTSPLWETGRP 20
+#define $HTFOOTWETGRP 21
+#define $HTIGHTWETGRP 22
+#define $HTCLOSEWETGRP 23
+#define $HTLOOSEWETGRP 24
+#define $HTQTRWETGRP 25
+#define $HTHALFWETGRP 26
+#define $HTOPENWETGRP 27
+#define $HTSPLWTRGRP 30
+#define $HTFOOTWTRGRP 31
+#define $HTIGHTWTRGRP 32
+#define $HTCLOSEWTRGRP 33
+#define $HTLOOSEWTRGRP 34
+#define $HTQTRWTRGRP 35
+#define $HTHALFWTRGRP 36
+#define $HTOPENWTRGRP 37
+//The open-hi hat mutes nothing, not even itself, so these are placeholder groups for it
+#define $HTMUTENOTHING 18
+#define $HTWETMUTENOTHING 28
+#define $HTWTRMUTENOTHING 38
+//Release time for hi-hat mutes - fixed value, no need to make this a controllable parameter
+#define $HTMUTEREL 0.03
+
+<control>
+label_cc7=Master vol
+label_cc10=Master pan (disabled)
+
+label_cc$HTVOL=Hi-hat vol
+label_cc$HTPAN=Hi-hat pan
+label_cc$HTTUNE=Hi-hat tune
+label_cc$HTPEDAL=Hi-hat openness
+label_cc$HTENV=Hi-hat tighten
+label_cc$HATWET=Hi-hat ambience
+label_cc$HTNOISEVOL=Hi-hat pedal noise vol
+
+set_cc7=100
+set_cc10=63
+
+set_cc$HTVOL=100
+set_cc$HTPAN=63
+set_cc$HTTUNE=63
+set_cc$HTNOISEVOL=12
+
+set_cc$HATWET=13
+<global>
+loop_mode=one_shot
+off_mode=normal
+ampeg_release=$HTMUTEREL //For hi-hat muting, easier to set it once here
+//Snare muting and ride have their own release time settings
+tune=-1200 //Everything is tuned down an octave, then tuned back up with its own tune param
+pan=-100 //Similar for pan - hard left, brought to proper position with param
+pan_oncc10=0 //Disable master pan
+amplitude_oncc7=100
+
+#include "mappings/hat_tight.sfz"
+#include "mappings/hat_closed.sfz"
+#include "mappings/hat_loose.sfz"
+#include "mappings/hat_quarter.sfz"
+#include "mappings/hat_half.sfz"
+#include "mappings/hat_open.sfz"
+#include "mappings/hat_foot.sfz"
+#include "mappings/hat_splash.sfz"
+#include "mappings/hat_mute_groups.sfz"
+#include "mappings/hat_pedal_noise.sfz"
+#include "mappings/wet/hat_tight.sfz"
+#include "mappings/wet/hat_closed.sfz"
+#include "mappings/wet/hat_loose.sfz"
+#include "mappings/wet/hat_quarter.sfz"
+#include "mappings/wet/hat_half.sfz"
+#include "mappings/wet/hat_open.sfz"
+#include "mappings/wet/hat_foot.sfz"
+#include "mappings/wet/hat_splash.sfz"
+#include "mappings/wet/hat_mute_groups.sfz"
+#include "mappings/wet/hat_pedal_noise.sfz"
+#include "mappings/wetter/hat_tight.sfz"
+#include "mappings/wetter/hat_closed.sfz"
+#include "mappings/wetter/hat_loose.sfz"
+#include "mappings/wetter/hat_quarter.sfz"
+#include "mappings/wetter/hat_half.sfz"
+#include "mappings/wetter/hat_open.sfz"
+#include "mappings/wetter/hat_foot.sfz"
+#include "mappings/wetter/hat_splash.sfz"
+#include "mappings/wetter/hat_mute_groups.sfz"
+#include "mappings/wetter/hat_pedal_noise.sfz"
+#include "mappings/curves.sfz"

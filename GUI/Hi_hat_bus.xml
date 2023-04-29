@@ -1,0 +1,56 @@
+<GUI w="775" h="335">
+
+	<!-- Hi-hat bus with all controls -->
+ 
+	<!-- Background -->
+
+	<StaticImage x="0" y="0" w="773" h="333" image="drums_bus_controls_tab.png" transparent="0"  />
+	
+	<!-- Controls - Hi-hat-->
+
+	<StaticText x="262" y="78" w="50" h="18" text="Pedal" color_text="#FFFFFFFF" transparent="1"   />
+
+	<StaticText x="262" y="88" w="50" h="18" text="Position" color_text="#FFFFFFFF" transparent="1"   />
+
+	<OptionMenu    param="4"  x="242"  y="114"  w="90" h="18"  font_size="Small" alignment="center" color_text="#000000FF"  
+color_back="#C6A24EFF" transparent="0"   >
+		<OptionItem name="Closed"		    value="0.12" />
+		<OptionItem name="Sizzling"		    value="0.303" />
+		<OptionItem name="Quarter"	    value="0.517" />
+		<OptionItem name="Half"		    value="0.712" />
+		<OptionItem name="Open"    value="0.912" />	
+	</OptionMenu>
+
+
+	<StaticText x="382" y="58" w="100" h="20" text="HI-HAT" color_text="#FFFFFFFF" transparent="1"  />
+
+	<StaticText x="327" y="88" w="50" h="18" text="Volume" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Slider param="70" x="346" y="114" w="12" h="91" orientation="vertical"  image_handle="fader_handle.png" image_bg="fader_slot_91.png"  />
+
+	<StaticText x="380" y="88" w="50" h="18" text="Pan" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Knob param="71" x="390" y="110" image="Drum_knob.png" frames="128"  />
+
+	<StaticText x="380" y="158" w="50" h="18" text="Tune" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Knob param="72" x="390" y="180" image="Drum_knob.png" frames="128"  />
+
+	<StaticText x="430" y="88" w="50" h="18" text="Ambience" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Knob param="61" x="440" y="110" image="Drum_knob.png" frames="128"  />
+
+	<StaticText x="430" y="158" w="50" h="18" text="Tighten" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Knob param="73" x="440" y="180" image="Drum_knob.png" frames="128"  />
+
+	<StaticText x="477" y="68" w="50" h="18" text="Pedal" color_text="#FFFFFFFF" transparent="1"   />
+
+	<StaticText x="477" y="78" w="50" h="18" text="Return" color_text="#FFFFFFFF" transparent="1"   />
+
+	<StaticText x="477" y="88" w="50" h="18" text="Noise" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Slider param="69" x="496" y="114" w="12" h="91" orientation="vertical"  image_handle="fader_handle.png" image_bg="fader_slot_91.png"  />
+
+
+</GUI>                                                                                                                                       

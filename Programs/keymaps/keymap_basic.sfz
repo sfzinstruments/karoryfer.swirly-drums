@@ -1,0 +1,83 @@
+//Kick keys
+
+#define $KICKKEY 36
+
+//Snare keys
+
+#define $SNMAINKEY 38
+#define $SNEDGEKEY 40
+#define $SNDIGKEY 39
+//This is the snare dig release sound
+#define $SNNOISEKEY 74
+
+//Hit-triggered stir keys - slow, fast and mute plus two flutter variants
+
+#define $SNSTIR1KEY 60
+#define $SNSTIR2KEY 64
+#define $SNSTIRMKEY 62
+#define $SNFLTR1KEY 61
+#define $SNFLTR2KEY 63
+
+//Hi-hat key - if using CC, lots of articulations will share a key
+//Foot and splash will probably have a separate key, though
+//By default, tight is on 42, foot chik on 44, closed through open on 46, and splash on 54
+
+#define $HTIGHTKEY 42
+#define $HTCLOSEKEY 46
+#define $HTLOOSEKEY 46
+#define $HTQTRKEY 46
+#define $HTHALFKEY 46
+#define $HTOPENKEY 46
+#define $HTFOOTKEY 44
+#define $HTSPLKEY 54
+//This is the hi-hat pedal return noise
+#define $HTNOISEKEY 78
+
+//Hi-hat CC ranges - for each articulation on a separate key, set all lo to 0 and all hi to 127
+//(and set separate keys above, of course)
+
+#define $HTIGHTLO 0
+#define $HTCLOSELO 0
+#define $HTLOOSELO 27
+#define $HTQTRLO 52
+#define $HTHALFLO 78
+#define $HTOPENLO 103
+
+#define $HTIGHTHI 127
+#define $HTCLOSEHI 26
+#define $HTLOOSEHI 51
+#define $HTQTRHI 77
+#define $HTHALFHI 102
+#define $HTOPENHI 127
+
+//For use with an e-kit whose pedal CC is 127 at fully closed and 0 at fully open
+//Uncomment this part and comment out the above version
+//
+//#define $HTIGHTLO 0
+//#define $HTCLOSELO 103
+//#define $HTLOOSELO 78
+//#define $HTQTRLO 52
+//#define $HTHALFLO 27
+//#define $HTOPENLO 0
+//
+//#define $HTIGHTHI 127
+//#define $HTCLOSEHI 127
+//#define $HTLOOSEHI 102
+//#define $HTQTRHI 77
+//#define $HTHALFHI 51
+//#define $HTOPENHI 26
+
+//Crash key
+#define $CRSHKEY 49
+
+//Ride key
+#define $RIDEKEY 51
+
+//16 in - floor - tom key
+#define $TFLKEY 41
+
+//12 in - extra medium - tom key
+#define $TXMKEY 45
+
+//10 in - medium high - tom key
+#define $TMHKEY 47

@@ -1,0 +1,7 @@
+//Kick keys
+
+#define $KICKKEY 36
+#define $KICKCKEY 35
+
+//This is a small kick pedal action noise
+#define $KICKNOISEKEY 72

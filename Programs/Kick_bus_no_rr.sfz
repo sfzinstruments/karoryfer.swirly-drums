@@ -1,0 +1,38 @@
+//Karoryfer Swirly Drums
+//Kick, alternate no RR version
+//Sympathetic snare buzz is in the snare bus, along with its controls
+
+#define $KICKKEY 36
+
+#define $KICKRESVOL 38
+#define $KICKBATVOL 39
+#define $KICKTUNE 40
+#define $KICKENV 41
+
+<control>
+label_cc7=Master vol
+label_cc10=Master pan (disabled)
+
+label_cc$KICKRESVOL=Reso head
+label_cc$KICKBATVOL=Batter head
+label_cc$KICKTUNE=Kick tune
+label_cc$KICKENV=Kick deaden
+
+
+set_cc7=100
+set_cc10=63
+
+set_cc$KICKRESVOL=100
+set_cc$KICKBATVOL=70
+set_cc$KICKTUNE=63
+
+<global>
+loop_mode=one_shot
+off_mode=normal
+tune=-1200 //Everything is tuned down an octave, then tuned back up with its own tune param
+pan=0
+pan_oncc10=0
+amplitude_oncc7=100
+
+#include "mappings/kick_no_rr.sfz"
+#include "mappings/curves.sfz"

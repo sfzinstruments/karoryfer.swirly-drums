@@ -1,0 +1,111 @@
+//Karoryfer Swirly Drums
+//Percussion bus
+
+//Keymap
+#include "keymaps/keymap_perc.sfz"
+
+//Cowbell parameters
+#define $CWBLVOL 105
+#define $CWBLPAN 106
+#define $CWBLTUNE 107
+
+//Darbouka parameters
+#define $DARBKVOL 109
+#define $DARBKPAN 110
+#define $DARBKTUNE 111
+
+//Djembe parameters
+#define $DJEMBVOL 113
+#define $DJEMBPAN 114
+#define $DJEMBTUNE 115
+
+//Low bongo parameters
+#define $LBNGVOL 117
+#define $LBNGPAN 118
+#define $LBNGTUNE 119
+
+//High bongo parameters
+#define $HBNGVOL 120
+#define $HBNGPAN 121
+#define $HBNGTUNE 122
+
+//One muting param for all percussions
+#define $PERCENV 125
+#define $PERCWET 68
+
+<control>
+label_cc7=Master vol
+label_cc10=Master pan (disabled)
+
+label_cc$CWBLVOL=Cowbell vol
+label_cc$CWBLPAN=Cowbell pan
+label_cc$CWBLTUNE=Cowbell tune
+
+label_cc$DARBKVOL=Darbouka vol
+label_cc$DARBKPAN=Darbouka pan
+label_cc$DARBKTUNE=Darbouka tune
+
+label_cc$DJEMBVOL=Djembe vol
+label_cc$DJEMBPAN=Djembe pan
+label_cc$DJEMBTUNE=Djembe tune
+
+label_cc$HBNGVOL=H bongo vol
+label_cc$HBNGPAN=H bongo pan
+label_cc$HBNGTUNE=H bongo tune
+
+label_cc$LBNGVOL=L bongo vol
+label_cc$LBNGPAN=L bongo pan
+label_cc$LBNGTUNE=L bongo tune
+
+label_cc$PERCENV=Perc deaden
+label_cc$PERCWET=Perc ambience
+
+set_cc7=100
+set_cc10=63
+
+set_cc$CWBLVOL=100
+set_cc$CWBLPAN=74
+set_cc$CWBLTUNE=63
+
+set_cc$DARBKVOL=80
+set_cc$DARBKPAN=55
+set_cc$DARBKTUNE=63
+
+set_cc$DJEMBVOL=80
+set_cc$DJEMBPAN=32
+set_cc$DJEMBTUNE=63
+
+set_cc$HBNGVOL=80
+set_cc$HBNGPAN=96
+set_cc$HBNGTUNE=63
+
+set_cc$LBNGVOL=80
+set_cc$LBNGPAN=80
+set_cc$LBNGTUNE=63
+
+set_cc$PERCWET=10
+
+<global>
+loop_mode=one_shot
+off_mode=normal
+tune=-1200 //Everything is tuned down an octave, then tuned back up with its own tune param
+pan=-100 //Similar for pan - hard left, brought to proper position with param
+pan_oncc10=0 //Disable master pan
+amplitude_oncc7=100
+
+#include "mappings/cowbell.sfz"
+#include "mappings/darbouka.sfz"
+#include "mappings/djembe.sfz"
+#include "mappings/hbongo.sfz"
+#include "mappings/lbongo.sfz"
+#include "mappings/wet/cowbell.sfz"
+#include "mappings/wet/darbouka.sfz"
+#include "mappings/wet/djembe.sfz"
+#include "mappings/wet/hbongo.sfz"
+#include "mappings/wet/lbongo.sfz"
+#include "mappings/wetter/cowbell.sfz"
+#include "mappings/wetter/darbouka.sfz"
+#include "mappings/wetter/djembe.sfz"
+#include "mappings/wetter/hbongo.sfz"
+#include "mappings/wetter/lbongo.sfz"
+#include "mappings/curves.sfz"

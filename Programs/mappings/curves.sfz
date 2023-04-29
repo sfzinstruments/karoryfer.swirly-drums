@@ -1,0 +1,33 @@
+//The curves for the mute controls
+
+<curve>curve_index=7
+v000=0
+v095=1
+v127=1
+
+<curve>curve_index=8
+v000=0
+v095=0.5
+v127=1
+
+//The curves for the room ambiences - bigger room first
+
+<curve>curve_index=9
+v000=0
+v063=0
+v127=0.3
+
+<curve>curve_index=10
+v000=0
+v063=0.4
+v127=0.1
+
+//Smaller room curve for snare bottom mic
+
+<curve>curve_index=11
+v000=0
+v031=0.1
+v063=0.4
+v127=0.1
+
+// END

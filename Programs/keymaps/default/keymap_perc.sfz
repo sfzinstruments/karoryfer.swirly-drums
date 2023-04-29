@@ -1,0 +1,14 @@
+//Cowbell key
+#define $CWBLKEY 66
+
+//Darbouka key
+#define $DARBKKEY 70
+
+//Djembe key
+#define $DJEMBKEY 65
+
+//Low bongo key
+#define $LBNGKEY 69
+
+//High bongo key
+#define $HBNGKEY 71

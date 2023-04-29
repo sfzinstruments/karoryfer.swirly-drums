@@ -1,0 +1,57 @@
+<GUI w="775" h="335">
+
+	<!-- Kick bus with both kicks and all controls -->
+ 
+	<!-- Background -->
+
+	<StaticImage x="0" y="0" w="773" h="333" image="drums_bus_controls_tab.png" transparent="0"  />
+	
+	<!-- Controls - Kicks-->
+	
+	<StaticText x="174" y="58" w="100" h="20" text="MARCHING KICK" color_text="#FFFFFFFF" transparent="1"  />
+
+	<StaticText x="127" y="88" w="50" h="18" text="Reso" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Slider param="38" x="146" y="114" w="12" h="91" orientation="vertical"  image_handle="fader_handle.png" image_bg="fader_slot_91.png"  />
+
+	<StaticText x="177" y="88" w="50" h="18" text="Batter" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Slider param="39" x="196" y="114" w="12" h="91" orientation="vertical"  image_handle="fader_handle.png" image_bg="fader_slot_91.png"  />
+
+	<StaticText x="230" y="88" w="50" h="18" text="Tune" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Knob param="40" x="240" y="110" image="Drum_knob.png" frames="128"  />
+
+	<StaticText x="230" y="158" w="50" h="18" text="Deaden" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Knob param="41" x="240" y="180" image="Drum_knob.png" frames="128"  />
+
+	<StaticText x="277" y="78" w="50" h="18" text="Pedal" color_text="#FFFFFFFF" transparent="1"   />
+
+	<StaticText x="277" y="88" w="50" h="18" text="Noise" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Slider param="37" x="296" y="114" w="12" h="91" orientation="vertical"  image_handle="fader_handle.png" image_bg="fader_slot_91.png"  />
+
+	<StaticText x="484" y="58" w="100" h="20" text="CAJON KICK" color_text="#FFFFFFFF" transparent="1" />
+
+	<StaticText x="457" y="88" w="50" h="18" text="Rear" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Slider param="45" x="476" y="114" w="12" h="91" orientation="vertical"  image_handle="fader_handle.png" image_bg="fader_slot_91.png"  />
+
+	<StaticText x="507" y="88" w="50" h="18" text="Front" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Slider param="46" x="526" y="114" w="12" h="91" orientation="vertical"  image_handle="fader_handle.png" image_bg="fader_slot_91.png"  />
+
+	<StaticText x="560" y="88" w="50" h="18" text="Tune" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Knob param="47" x="570" y="110" image="Drum_knob.png" frames="128"  />
+
+	<StaticText x="560" y="158" w="50" h="18" text="Deaden" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Knob param="48" x="570" y="180" image="Drum_knob.png" frames="128"  />
+
+	<StaticText x="370" y="88" w="50" h="18" text="Ambience" color_text="#FFFFFFFF" transparent="1"   />
+	
+	<Knob param="59" x="380" y="110" image="Drum_knob.png" frames="128"  />
+
+</GUI>                                                                                                                                       

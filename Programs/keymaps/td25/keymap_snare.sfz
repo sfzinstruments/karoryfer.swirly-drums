@@ -1,0 +1,19 @@
+//Snare keys
+
+#define $SNMAINKEY 38
+#define $SNEDGEKEY 40
+#define $SNDIGKEY 37
+//This is the snare dig release sound
+#define $SNNOISEKEY 74
+
+//Hit-triggered stir keys - slow, fast and mute plus two flutter variants
+
+#define $SNSTIR1KEY 23
+#define $SNSTIR2KEY 27
+#define $SNSTIRMKEY 28
+#define $SNFLTR1KEY 61
+#define $SNFLTR2KEY 63
+
+//Kick key included for snare bus purposes
+
+#define $KICKKEY 36

@@ -1,0 +1,14 @@
+//16 in - floor - tom key
+#define $TFLKEY 43
+
+//13 in - medium low - tom key
+#define $TMLKEY 47
+
+//12 in - extra medium - tom key
+#define $TXMKEY 45
+
+//10 in - medium high - tom key
+#define $TMHKEY 48
+
+//8 in - very high - tom key
+#define $TVHKEY 50

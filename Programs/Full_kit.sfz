@@ -1,0 +1,616 @@
+//Karoryfer Swirly Drums
+//Complete kit mapping
+
+//Here are references to the keymaps
+//To change the notes assigned to sounds, edit those files
+
+#include "keymaps/keymap_kick.sfz"
+#include "keymaps/keymap_snare.sfz"
+#include "keymaps/keymap_hi_hat.sfz"
+#include "keymaps/keymap_cymbal.sfz"
+#include "keymaps/keymap_tom.sfz"
+#include "keymaps/keymap_perc.sfz"
+
+#define $KICKRESVOL 38
+#define $KICKBATVOL 39
+#define $KICKTUNE 40
+#define $KICKENV 41
+#define $KICKWET 59
+
+#define $KICKCRVOL 45
+#define $KICKCFVOL 46
+#define $KICKCTUNE 47
+#define $KICKCENV 48
+
+#define $KICKNOISEVOL 37
+
+//Snare buzz on kick hits parameters
+
+#define $KICKBUZZVOL 42
+#define $KICKBUZZATK 43
+#define $KICKBUZZOFF 44
+
+//Snare parameters
+
+#define $SNSKNVOL 50
+#define $SNSPRVOL 51
+#define $SNPAN 52
+#define $SNTUNE 53
+#define $SNENV 54
+
+#define $SNSTRENV 55
+#define $SNSTRDEC 56
+#define $SNSTRVOL 57
+#define $SNSTRREL 58
+#define $SNSTRCUR 14
+#define $SNWET 60
+
+#define $SNNOISEVOL 49
+
+//Snare muting groups
+//Hit-triggered stirs will mute other hit-triggered stirs, with four groups here
+//Separate for top, bottom and for each speed layer
+//And separate groups for the wet signal
+
+#define $SNBTM1GRP 40
+#define $SNTOP1GRP 41
+#define $SNBTM2GRP 42
+#define $SNTOP2GRP 43
+#define $SNBTM1WETGRP 45
+#define $SNTOP1WETGRP 46
+#define $SNBTM2WETGRP 47
+#define $SNTOP2WETGRP 48
+#define $SNBTM1WTRGRP 50
+#define $SNTOP1WTRGRP 51
+#define $SNBTM2WTRGRP 52
+#define $SNTOP2WTRGRP 53
+
+//Digs will mute hits - but only the top mic, so half as many groups
+#define $SNHITGRP 44
+#define $SNHITWETGRP 49
+#define $SNHITWTRGRP 54
+//Placeholder groups for the snare hits which don't mute anything
+//Two groups needed to avoid SFZ warning
+#define $SNMUTENOTHING 55
+#define $SNWETMUTENOTHING 56
+#define $SNWTRMUTENOTHING 57
+
+//This is the fadeout time for a snare hit being muted by a dig or stir
+#define $SNMUTEREL 0.5
+
+//Stir and flutter envelope curve shapes 
+//-8 to 8 is about the max practically usable range
+//Attack curve - 0 is default shape (flat) but positive values of around 3-4
+//seem to sound good - slow intial attack, then a sharp accent near the peak
+#define $SNSTRASHP 3.8
+//Decay curve - again flat would be 0, small negative values around -1 or -2
+//seem OK for making the accent a bit sharper but in general decay seems like
+//it works better when it's closer to flat than attack is
+//Release curve for crossfades is not affected by this and is always flat
+#define $SNSTRDSHP -1.4
+
+//Hi-hat parameters
+
+#define $HTVOL 70
+#define $HTPAN 71
+#define $HTTUNE 72
+
+#define $HTENV 73
+#define $HATWET 61
+#define $HTPEDAL 4
+
+#define $HTNOISEVOL 69
+
+//Hi-hat mute groups - more closed mutes more open, splash mutes itself
+
+#define $HTSPLGRP 10
+#define $HTFOOTGRP 11
+#define $HTIGHTGRP 12
+#define $HTCLOSEGRP 13
+#define $HTLOOSEGRP 14
+#define $HTQTRGRP 15
+#define $HTHALFGRP 16
+#define $HTOPENGRP 17
+#define $HTSPLWETGRP 20
+#define $HTFOOTWETGRP 21
+#define $HTIGHTWETGRP 22
+#define $HTCLOSEWETGRP 23
+#define $HTLOOSEWETGRP 24
+#define $HTQTRWETGRP 25
+#define $HTHALFWETGRP 26
+#define $HTOPENWETGRP 27
+#define $HTSPLWTRGRP 30
+#define $HTFOOTWTRGRP 31
+#define $HTIGHTWTRGRP 32
+#define $HTCLOSEWTRGRP 33
+#define $HTLOOSEWTRGRP 34
+#define $HTQTRWTRGRP 35
+#define $HTHALFWTRGRP 36
+#define $HTOPENWTRGRP 37
+//The open-hi hat mutes nothing, not even itself, so these are placeholder groups for it
+#define $HTMUTENOTHING 18
+#define $HTWETMUTENOTHING 28
+#define $HTWTRMUTENOTHING 38
+//Release time for hi-hat mutes - fixed value, no need to make this a controllable parameter
+#define $HTMUTEREL 0.03
+
+//Crash parameters
+#define $CRSHVOL 75
+#define $CRSHPAN 76
+#define $CRSHTUNE 77
+
+//Ride parameters
+#define $RIDEVOL 80
+#define $RIDEPAN 81
+#define $RIDETUNE 82
+#define $RIDEBLD 83
+
+//Ride mute group, for controlling buildup
+#define $RDMUTE 70
+#define $RDWETMUTE 71
+#define $RDWTRMUTE 72
+
+//Splash parameters
+#define $SPLSHVOL 85
+#define $SPLSHPAN 86
+#define $SPLSHTUNE 87
+
+//China parameters
+#define $CHNAVOL 90
+#define $CHNAPAN 91
+#define $CHNATUNE 92
+
+//Broken crash parameters
+#define $CRSH2VOL 95
+#define $CRSH2PAN 96
+#define $CRSH2TUNE 97
+
+//Cracked splash parameters
+#define $SPLSH2VOL 100
+#define $SPLSH2PAN 101
+#define $SPLSH2TUNE 102
+
+//One ambience parameter for all the cymbals
+#define $CYMWET 63
+
+//16 in tom parameters
+#define $TFLVOL 15
+#define $TFLPAN 16
+#define $TFLTUNE 17
+
+//13 in tom parameters
+#define $TMLVOL 20
+#define $TMLPAN 21
+#define $TMLTUNE 22
+
+//12 in tom parameters
+#define $TXMVOL 24
+#define $TXMPAN 25
+#define $TXMTUNE 26
+
+//10 in tom parameters
+#define $TMHVOL 28
+#define $TMHPAN 29
+#define $TMHTUNE 30
+
+//8 in tom parameters
+#define $TVHVOL 32
+#define $TVHPAN 33
+#define $TVHTUNE 34
+
+//One mute parameter for all the toms to be user friendly
+//And one room sound parameter for all the toms
+
+#define $TOMENV 36
+#define $TOMWET 62
+
+//Cowbell parameters
+#define $CWBLVOL 105
+#define $CWBLPAN 106
+#define $CWBLTUNE 107
+
+//Darbouka parameters
+#define $DARBKVOL 109
+#define $DARBKPAN 110
+#define $DARBKTUNE 111
+
+//Djembe parameters
+#define $DJEMBVOL 113
+#define $DJEMBPAN 114
+#define $DJEMBTUNE 115
+
+//Low bongo parameters
+#define $LBNGVOL 117
+#define $LBNGPAN 118
+#define $LBNGTUNE 119
+
+//High bongo parameters
+#define $HBNGVOL 120
+#define $HBNGPAN 121
+#define $HBNGTUNE 122
+
+//One muting param for all percussions
+#define $PERCENV 125
+#define $PERCWET 68
+
+<control>
+label_cc7=Master vol
+label_cc10=Master pan (disabled)
+
+label_cc$KICKRESVOL=Reso head
+label_cc$KICKBATVOL=Batter head
+label_cc$KICKTUNE=Kick tune
+label_cc$KICKENV=Kick deaden
+label_cc$KICKWET=Kick ambience
+
+label_cc$KICKCRVOL=Cajon rear
+label_cc$KICKCFVOL=Cajon front
+label_cc$KICKCTUNE=Cajon tune
+label_cc$KICKCENV=Cajon deaden
+
+label_cc$KICKNOISEVOL=Kick pedal noise vol
+
+label_cc$SNSKNVOL=Top vol
+label_cc$SNSPRVOL=Bottom vol
+label_cc$SNPAN=Snare pan
+label_cc$SNTUNE=Snare tune
+label_cc$SNSTRENV=Stir time
+label_cc$SNSTRDEC=Stir tail
+label_cc$SNSTRVOL=Stir vol
+label_cc$SNSTRREL=Stir release
+label_cc$SNSTRCUR=Stir curve
+label_cc$SNENV=Snare deaden
+label_cc$SNWET=Snare ambience
+label_cc$SNNOISEVOL=Dig release noise vol
+
+label_cc$KICKBUZZVOL=Symp snare buzz
+label_cc$KICKBUZZATK=Buzz fade-in
+label_cc$KICKBUZZOFF=Buzz sample offset
+
+label_cc$HTVOL=Hi-hat vol
+label_cc$HTPAN=Hi-hat pan
+label_cc$HTTUNE=Hi-hat tune
+label_cc$HTPEDAL=Hi-hat openness
+label_cc$HTENV=Hi-hat tighten
+label_cc$HATWET=Hi-hat ambience
+label_cc$HTNOISEVOL=Hi-hat pedal noise vol
+
+label_cc$CRSHVOL=Crash vol
+label_cc$CRSHPAN=Crash pan
+label_cc$CRSHTUNE=Crash tune
+
+label_cc$RIDEVOL=Ride vol
+label_cc$RIDEPAN=Ride pan
+label_cc$RIDETUNE=Ride tune
+label_cc$RIDEBLD=Ride buildup
+
+label_cc$SPLSHVOL=Splash vol
+label_cc$SPLSHPAN=Splash pan
+label_cc$SPLSHTUNE=Splash tune
+
+label_cc$CHNAVOL=China vol
+label_cc$CHNAPAN=China pan
+label_cc$CHNATUNE=China tune
+
+label_cc$CRSH2VOL=B crash vol
+label_cc$CRSH2PAN=B crash pan
+label_cc$CRSH2TUNE=B crash tune
+
+label_cc$SPLSH2VOL=C splash vol
+label_cc$SPLSH2PAN=C splash pan
+label_cc$SPLSH2TUNE=C splash tune
+
+label_cc$CYMWET=Cymbal ambience
+
+label_cc$TFLVOL=16 in tom vol
+label_cc$TFLPAN=16 in pan
+label_cc$TFLTUNE=16 in tune
+
+label_cc$TMLVOL=13 in tom vol
+label_cc$TMLPAN=13 in pan
+label_cc$TMLTUNE=13 in tune
+
+label_cc$TXMVOL=12 in tom vol
+label_cc$TXMPAN=12 in pan
+label_cc$TXMTUNE=12 in tune
+
+label_cc$TMHVOL=10 in tom vol
+label_cc$TMHPAN=10 in pan
+label_cc$TMHTUNE=10 in tune
+
+label_cc$TVHVOL=8 in tom vol
+label_cc$TVHPAN=8 in pan
+label_cc$TVHTUNE=8 in tune
+
+label_cc$TOMENV=Tom deaden
+label_cc$TOMWET=Tom ambience
+
+label_cc$CWBLVOL=Cowbell vol
+label_cc$CWBLPAN=Cowbell pan
+label_cc$CWBLTUNE=Cowbell tune
+
+label_cc$DARBKVOL=Darbouka vol
+label_cc$DARBKPAN=Darbouka pan
+label_cc$DARBKTUNE=Darbouka tune
+
+label_cc$DJEMBVOL=Djembe vol
+label_cc$DJEMBPAN=Djembe pan
+label_cc$DJEMBTUNE=Djembe tune
+
+label_cc$HBNGVOL=H bongo vol
+label_cc$HBNGPAN=H bongo pan
+label_cc$HBNGTUNE=H bongo tune
+
+label_cc$LBNGVOL=L bongo vol
+label_cc$LBNGPAN=L bongo pan
+label_cc$LBNGTUNE=L bongo tune
+
+label_cc$PERCENV=Perc deaden
+label_cc$PERCWET=Perc ambience
+
+set_cc7=100
+set_cc10=63
+
+set_cc$KICKRESVOL=100
+set_cc$KICKBATVOL=70
+set_cc$KICKTUNE=63
+set_cc$KICKNOISEVOL=12
+
+set_cc$KICKCRVOL=100
+set_cc$KICKCFVOL=13
+set_cc$KICKCTUNE=63
+
+set_cc$SNSKNVOL=80
+set_cc$SNSPRVOL=100
+set_cc$SNPAN=63
+set_cc$SNTUNE=63
+set_cc$SNSTRENV=40
+set_cc$SNSTRDEC=50
+set_cc$SNSTRVOL=63
+set_cc$SNSTRREL=40
+set_cc$SNSTRCUR=63
+set_cc$SNNOISEVOL=12
+
+set_cc$KICKBUZZVOL=0
+set_cc$KICKBUZZATK=13
+set_cc$KICKBUZZOFF=27
+
+set_cc$HTVOL=100
+set_cc$HTPAN=63
+set_cc$HTTUNE=63
+set_cc$HTNOISEVOL=12
+
+set_cc$CRSHVOL=100
+set_cc$CRSHPAN=90
+set_cc$CRSHTUNE=63
+
+set_cc$RIDEVOL=100
+set_cc$RIDEPAN=38
+set_cc$RIDETUNE=63
+set_cc$RIDEBLD=80
+
+set_cc$SPLSHVOL=100
+set_cc$SPLSHPAN=28
+set_cc$SPLSHTUNE=63
+
+set_cc$CHNAVOL=100
+set_cc$CHNAPAN=102
+set_cc$CHNATUNE=63
+
+set_cc$CRSH2VOL=100
+set_cc$CRSH2PAN=20
+set_cc$CRSH2TUNE=63
+
+set_cc$SPLSH2VOL=100
+set_cc$SPLSH2PAN=100
+set_cc$SPLSH2TUNE=63
+
+set_cc$TFLVOL=80
+set_cc$TFLPAN=0
+set_cc$TFLTUNE=63
+
+set_cc$TMLVOL=80
+set_cc$TMLPAN=127
+set_cc$TMLTUNE=63
+
+set_cc$TXMVOL=80
+set_cc$TXMPAN=90
+set_cc$TXMTUNE=63
+
+set_cc$TMHVOL=80
+set_cc$TMHPAN=55
+set_cc$TMHTUNE=63
+
+set_cc$TVHVOL=80
+set_cc$TVHPAN=30
+set_cc$TVHTUNE=63
+
+set_cc$CWBLVOL=100
+set_cc$CWBLPAN=74
+set_cc$CWBLTUNE=63
+
+set_cc$DARBKVOL=80
+set_cc$DARBKPAN=55
+set_cc$DARBKTUNE=63
+
+set_cc$DJEMBVOL=80
+set_cc$DJEMBPAN=32
+set_cc$DJEMBTUNE=63
+
+set_cc$HBNGVOL=80
+set_cc$HBNGPAN=96
+set_cc$HBNGTUNE=63
+
+set_cc$LBNGVOL=80
+set_cc$LBNGPAN=80
+set_cc$LBNGTUNE=63
+
+set_cc$SNWET=50
+set_cc$HATWET=13
+set_cc$TOMWET=35
+set_cc$CYMWET=40
+set_cc$PERCWET=10
+
+<global>
+loop_mode=one_shot
+off_mode=normal
+ampeg_release=$HTMUTEREL //For hi-hat muting, easier to set it once here
+//Snare muting and ride have their own release time settings
+tune=-1200 //Everything is tuned down an octave, then tuned back up with its own tune param
+pan=-100 //Similar for pan - hard left, brought to proper position with param
+pan_oncc10=0 //Disable master pan
+amplitude_oncc7=100
+//These only affect snare stirs and flutters
+//They are explained in the define section at the top
+ampeg_attack_shape=$SNSTRASHP
+ampeg_decay_shape=$SNSTRDSHP
+
+
+#include "mappings/kick.sfz"
+#include "mappings/kick_cajon.sfz"
+#include "mappings/kick_buzz.sfz"
+#include "mappings/snare_main_btm.sfz"
+#include "mappings/snare_main_top.sfz"
+#include "mappings/snare_edge_btm.sfz"
+#include "mappings/snare_edge_top.sfz"
+#include "mappings/snare_dig_btm.sfz"
+#include "mappings/snare_dig_top.sfz"
+#include "mappings/stir_mute_groups.sfz"
+#include "mappings/hat_tight.sfz"
+#include "mappings/hat_closed.sfz"
+#include "mappings/hat_loose.sfz"
+#include "mappings/hat_quarter.sfz"
+#include "mappings/hat_half.sfz"
+#include "mappings/hat_open.sfz"
+#include "mappings/hat_foot.sfz"
+#include "mappings/hat_splash.sfz"
+#include "mappings/hat_mute_groups.sfz"
+#include "mappings/crash.sfz"
+#include "mappings/ride.sfz"
+#include "mappings/splash.sfz"
+#include "mappings/china.sfz"
+#include "mappings/crash_broken.sfz"
+#include "mappings/splash_broken.sfz"
+#include "mappings/tom_floor.sfz"
+#include "mappings/tom_mlow.sfz"
+#include "mappings/tom_xmed.sfz"
+#include "mappings/tom_mhi.sfz"
+#include "mappings/tom_vhi.sfz"
+#include "mappings/cowbell.sfz"
+#include "mappings/darbouka.sfz"
+#include "mappings/djembe.sfz"
+#include "mappings/hbongo.sfz"
+#include "mappings/lbongo.sfz"
+#include "mappings/kick_pedal_noise.sfz"
+#include "mappings/snare_dig_release.sfz"
+#include "mappings/hat_pedal_noise.sfz"
+#include "mappings/wet/kick.sfz"
+#include "mappings/wet/kick_cajon.sfz"
+#include "mappings/wet/kick_buzz.sfz"
+#include "mappings/wet/snare_main_btm.sfz"
+#include "mappings/wet/snare_main_top.sfz"
+#include "mappings/wet/snare_edge_btm.sfz"
+#include "mappings/wet/snare_edge_top.sfz"
+#include "mappings/wet/snare_dig_btm.sfz"
+#include "mappings/wet/snare_dig_top.sfz"
+#include "mappings/wet/stir_mute_groups.sfz"
+#include "mappings/wet/hat_tight.sfz"
+#include "mappings/wet/hat_closed.sfz"
+#include "mappings/wet/hat_loose.sfz"
+#include "mappings/wet/hat_quarter.sfz"
+#include "mappings/wet/hat_half.sfz"
+#include "mappings/wet/hat_open.sfz"
+#include "mappings/wet/hat_foot.sfz"
+#include "mappings/wet/hat_splash.sfz"
+#include "mappings/wet/hat_mute_groups.sfz"
+#include "mappings/wet/crash.sfz"
+#include "mappings/wet/ride.sfz"
+#include "mappings/wet/splash.sfz"
+#include "mappings/wet/china.sfz"
+#include "mappings/wet/crash_broken.sfz"
+#include "mappings/wet/splash_broken.sfz"
+#include "mappings/wet/tom_floor.sfz"
+#include "mappings/wet/tom_mlow.sfz"
+#include "mappings/wet/tom_xmed.sfz"
+#include "mappings/wet/tom_mhi.sfz"
+#include "mappings/wet/tom_vhi.sfz"
+#include "mappings/wet/cowbell.sfz"
+#include "mappings/wet/darbouka.sfz"
+#include "mappings/wet/djembe.sfz"
+#include "mappings/wet/hbongo.sfz"
+#include "mappings/wet/lbongo.sfz"
+#include "mappings/wet/kick_pedal_noise.sfz"
+#include "mappings/wet/snare_dig_release.sfz"
+#include "mappings/wet/hat_pedal_noise.sfz"
+#include "mappings/wetter/kick.sfz"
+#include "mappings/wetter/kick_cajon.sfz"
+#include "mappings/wetter/kick_buzz.sfz"
+#include "mappings/wetter/snare_main_btm.sfz"
+#include "mappings/wetter/snare_main_top.sfz"
+#include "mappings/wetter/snare_edge_btm.sfz"
+#include "mappings/wetter/snare_edge_top.sfz"
+#include "mappings/wetter/snare_dig_btm.sfz"
+#include "mappings/wetter/snare_dig_top.sfz"
+#include "mappings/wetter/stir_mute_groups.sfz"
+#include "mappings/wetter/hat_tight.sfz"
+#include "mappings/wetter/hat_closed.sfz"
+#include "mappings/wetter/hat_loose.sfz"
+#include "mappings/wetter/hat_quarter.sfz"
+#include "mappings/wetter/hat_half.sfz"
+#include "mappings/wetter/hat_open.sfz"
+#include "mappings/wetter/hat_foot.sfz"
+#include "mappings/wetter/hat_splash.sfz"
+#include "mappings/wetter/hat_mute_groups.sfz"
+#include "mappings/wetter/crash.sfz"
+#include "mappings/wetter/ride.sfz"
+#include "mappings/wetter/splash.sfz"
+#include "mappings/wetter/china.sfz"
+#include "mappings/wetter/crash_broken.sfz"
+#include "mappings/wetter/splash_broken.sfz"
+#include "mappings/wetter/tom_floor.sfz"
+#include "mappings/wetter/tom_mlow.sfz"
+#include "mappings/wetter/tom_xmed.sfz"
+#include "mappings/wetter/tom_mhi.sfz"
+#include "mappings/wetter/tom_vhi.sfz"
+#include "mappings/wetter/cowbell.sfz"
+#include "mappings/wetter/darbouka.sfz"
+#include "mappings/wetter/djembe.sfz"
+#include "mappings/wetter/hbongo.sfz"
+#include "mappings/wetter/lbongo.sfz"
+#include "mappings/wetter/kick_pedal_noise.sfz"
+#include "mappings/wetter/snare_dig_release.sfz"
+#include "mappings/wetter/hat_pedal_noise.sfz"
+
+//Selectable stirs with different curve shapes
+<master>
+hicc$SNSTRCUR=43
+ampeg_attack_shape=0
+ampeg_decay_shape=0
+#include "mappings/snare_stir_on_notes.sfz"
+#include "mappings/snare_flutter_on_notes.sfz"
+#include "mappings/wet/snare_stir_on_notes.sfz"
+#include "mappings/wet/snare_flutter_on_notes.sfz"
+#include "mappings/wetter/snare_stir_on_notes.sfz"
+#include "mappings/wetter/snare_flutter_on_notes.sfz"
+<master>
+locc$SNSTRCUR=44
+hicc$SNSTRCUR=85
+ampeg_attack_shape=3.8
+ampeg_decay_shape=-1.4
+#include "mappings/snare_stir_on_notes.sfz"
+#include "mappings/snare_flutter_on_notes.sfz"
+#include "mappings/wet/snare_stir_on_notes.sfz"
+#include "mappings/wet/snare_flutter_on_notes.sfz"
+#include "mappings/wetter/snare_stir_on_notes.sfz"
+#include "mappings/wetter/snare_flutter_on_notes.sfz"
+<master>
+locc$SNSTRCUR=86
+ampeg_attack_shape=5.2
+ampeg_decay_shape=-3.5
+#include "mappings/snare_stir_on_notes.sfz"
+#include "mappings/snare_flutter_on_notes.sfz"
+#include "mappings/wet/snare_stir_on_notes.sfz"
+#include "mappings/wet/snare_flutter_on_notes.sfz"
+#include "mappings/wetter/snare_stir_on_notes.sfz"
+#include "mappings/wetter/snare_flutter_on_notes.sfz"
+#include "mappings/curves.sfz"

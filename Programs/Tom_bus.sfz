@@ -1,0 +1,111 @@
+//Karoryfer Swirly Drums
+//Tom bus
+
+//The keymap
+#include "keymaps/keymap_tom.sfz"
+
+//16 in tom parameters
+#define $TFLVOL 15
+#define $TFLPAN 16
+#define $TFLTUNE 17
+
+//13 in tom parameters
+#define $TMLVOL 20
+#define $TMLPAN 21
+#define $TMLTUNE 22
+
+//12 in tom parameters
+#define $TXMVOL 24
+#define $TXMPAN 25
+#define $TXMTUNE 26
+
+//10 in tom parameters
+#define $TMHVOL 28
+#define $TMHPAN 29
+#define $TMHTUNE 30
+
+//8 in tom parameters
+#define $TVHVOL 32
+#define $TVHPAN 33
+#define $TVHTUNE 34
+
+//One mute parameter for all the toms to be user friendly
+//And one room sound parameter for all the toms
+
+#define $TOMENV 36
+#define $TOMWET 62
+
+<control>
+label_cc$TFLVOL=16 in tom vol
+label_cc$TFLPAN=16 in pan
+label_cc$TFLTUNE=16 in tune
+
+label_cc$TMLVOL=13 in tom vol
+label_cc$TMLPAN=13 in pan
+label_cc$TMLTUNE=13 in tune
+
+label_cc$TXMVOL=12 in tom vol
+label_cc$TXMPAN=12 in pan
+label_cc$TXMTUNE=12 in tune
+
+label_cc$TMHVOL=10 in tom vol
+label_cc$TMHPAN=10 in pan
+label_cc$TMHTUNE=10 in tune
+
+label_cc$TVHVOL=8 in tom vol
+label_cc$TVHPAN=8 in pan
+label_cc$TVHTUNE=8 in tune
+
+label_cc$TOMENV=Tom deaden
+label_cc$TOMWET=Tom ambience
+
+set_cc7=100
+set_cc10=63
+
+set_cc$TFLVOL=80
+set_cc$TFLPAN=0
+set_cc$TFLTUNE=63
+
+set_cc$TMLVOL=80
+set_cc$TMLPAN=127
+set_cc$TMLTUNE=63
+
+set_cc$TXMVOL=80
+set_cc$TXMPAN=90
+set_cc$TXMTUNE=63
+
+set_cc$TMHVOL=80
+set_cc$TMHPAN=55
+set_cc$TMHTUNE=63
+
+set_cc$TVHVOL=80
+set_cc$TVHPAN=30
+set_cc$TVHTUNE=63
+
+set_cc$TOMWET=35
+
+<global>
+loop_mode=one_shot
+off_mode=normal
+//Snare muting and ride have their own release time settings
+tune=-1200 //Everything is tuned down an octave, then tuned back up with its own tune param
+pan=-100 //Similar for pan - hard left, brought to proper position with param
+pan_oncc10=0 //Disable master pan
+amplitude_oncc7=100
+
+#include "mappings/tom_floor.sfz"
+#include "mappings/tom_mlow.sfz"
+#include "mappings/tom_xmed.sfz"
+#include "mappings/tom_mhi.sfz"
+#include "mappings/tom_vhi.sfz"
+#include "mappings/wet/tom_floor.sfz"
+#include "mappings/wet/tom_mlow.sfz"
+#include "mappings/wet/tom_xmed.sfz"
+#include "mappings/wet/tom_mhi.sfz"
+#include "mappings/wet/tom_vhi.sfz"
+#include "mappings/wetter/tom_floor.sfz"
+#include "mappings/wetter/tom_mlow.sfz"
+#include "mappings/wetter/tom_xmed.sfz"
+#include "mappings/wetter/tom_mhi.sfz"
+#include "mappings/wetter/tom_vhi.sfz"
+#include "mappings/curves.sfz"

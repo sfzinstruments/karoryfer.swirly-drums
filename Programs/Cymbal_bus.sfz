@@ -1,0 +1,133 @@
+//Karoryfer Swirly Drums
+//Cymbal bus
+
+//The keymap
+#include "keymaps/keymap_cymbal.sfz"
+
+//Crash parameters
+#define $CRSHVOL 75
+#define $CRSHPAN 76
+#define $CRSHTUNE 77
+
+//Ride parameters
+#define $RIDEVOL 80
+#define $RIDEPAN 81
+#define $RIDETUNE 82
+#define $RIDEBLD 83
+
+//Ride mute groups, for controlling buildup
+#define $RDMUTE 70
+#define $RDWETMUTE 71
+#define $RDWTRMUTE 72
+
+//Splash parameters
+#define $SPLSHVOL 85
+#define $SPLSHPAN 86
+#define $SPLSHTUNE 87
+
+//China parameters
+#define $CHNAVOL 90
+#define $CHNAPAN 91
+#define $CHNATUNE 92
+
+//Broken crash parameters
+#define $CRSH2VOL 95
+#define $CRSH2PAN 96
+#define $CRSH2TUNE 97
+
+//Cracked splash parameters
+#define $SPLSH2VOL 100
+#define $SPLSH2PAN 101
+#define $SPLSH2TUNE 102
+
+//One ambience parameter for all the cymbals
+#define $CYMWET 63
+
+<control>
+label_cc7=Master vol
+label_cc10=Master pan (disabled)
+
+label_cc$CRSHVOL=Crash vol
+label_cc$CRSHPAN=Crash pan
+label_cc$CRSHTUNE=Crash tune
+
+label_cc$RIDEVOL=Ride vol
+label_cc$RIDEPAN=Ride pan
+label_cc$RIDETUNE=Ride tune
+label_cc$RIDEBLD=Ride buildup
+
+label_cc$SPLSHVOL=Splash vol
+label_cc$SPLSHPAN=Splash pan
+label_cc$SPLSHTUNE=Splash tune
+
+label_cc$CHNAVOL=China vol
+label_cc$CHNAPAN=China pan
+label_cc$CHNATUNE=China tune
+
+label_cc$CRSH2VOL=B crash vol
+label_cc$CRSH2PAN=B crash pan
+label_cc$CRSH2TUNE=B crash tune
+
+label_cc$SPLSH2VOL=C splash vol
+label_cc$SPLSH2PAN=C splash pan
+label_cc$SPLSH2TUNE=C splash tune
+
+label_cc$CYMWET=Cymbal ambience
+
+set_cc7=100
+set_cc10=63
+
+set_cc$CRSHVOL=100
+set_cc$CRSHPAN=90
+set_cc$CRSHTUNE=63
+
+set_cc$RIDEVOL=100
+set_cc$RIDEPAN=38
+set_cc$RIDETUNE=63
+set_cc$RIDEBLD=80
+
+set_cc$SPLSHVOL=100
+set_cc$SPLSHPAN=28
+set_cc$SPLSHTUNE=63
+
+set_cc$CHNAVOL=100
+set_cc$CHNAPAN=102
+set_cc$CHNATUNE=63
+
+set_cc$CRSH2VOL=100
+set_cc$CRSH2PAN=20
+set_cc$CRSH2TUNE=63
+
+set_cc$SPLSH2VOL=100
+set_cc$SPLSH2PAN=100
+set_cc$SPLSH2TUNE=63
+
+set_cc$CYMWET=40
+
+<global>
+loop_mode=one_shot
+off_mode=normal
+tune=-1200 //Everything is tuned down an octave, then tuned back up with its own tune param
+pan=-100 //Similar for pan - hard left, brought to proper position with param
+pan_oncc10=0 //Disable master pan
+amplitude_oncc7=100
+
+#include "mappings/crash.sfz"
+#include "mappings/ride.sfz"
+#include "mappings/splash.sfz"
+#include "mappings/china.sfz"
+#include "mappings/crash_broken.sfz"
+#include "mappings/splash_broken.sfz"
+#include "mappings/wet/crash.sfz"
+#include "mappings/wet/ride.sfz"
+#include "mappings/wet/splash.sfz"
+#include "mappings/wet/china.sfz"
+#include "mappings/wet/crash_broken.sfz"
+#include "mappings/wet/splash_broken.sfz""
+#include "mappings/wetter/crash.sfz"
+#include "mappings/wetter/ride.sfz"
+#include "mappings/wetter/splash.sfz"
+#include "mappings/wetter/china.sfz"
+#include "mappings/wetter/crash_broken.sfz"
+#include "mappings/wetter/splash_broken.sfz"
+#include "mappings/curves.sfz"

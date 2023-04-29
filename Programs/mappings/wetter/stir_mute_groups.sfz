@@ -1,0 +1,17 @@
+<group>
+key=$SNSTIRMKEY
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+<region>
+group=$SNBTM1WTRGRP
+off_by=$SNBTM1WTRGRP
+<region>
+group=$SNTOP1WTRGRP
+off_by=$SNTOP1WTRGRP
+<region>
+group=$SNBTM2WTRGRP
+off_by=$SNBTM2WTRGRP
+<region>
+group=$SNTOP2WTRGRP
+off_by=$SNTOP2WTRGRP

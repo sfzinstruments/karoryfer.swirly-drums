@@ -1,0 +1,68 @@
+//Karoryfer Swirly Drums
+//Kick bus
+//Sympathetic snare buzz is in the snare bus, along with its controls
+
+//Kick keymap
+
+#include "keymaps/keymap_kick.sfz"
+
+#define $KICKRESVOL 38
+#define $KICKBATVOL 39
+#define $KICKTUNE 40
+#define $KICKENV 41
+#define $KICKWET 59
+
+#define $KICKCRVOL 45
+#define $KICKCFVOL 46
+#define $KICKCTUNE 47
+#define $KICKCENV 48
+
+#define $KICKNOISEVOL 37
+
+<control>
+label_cc7=Master vol
+label_cc10=Master pan (disabled)
+
+label_cc$KICKRESVOL=Reso head
+label_cc$KICKBATVOL=Batter head
+label_cc$KICKTUNE=Kick tune
+label_cc$KICKENV=Kick deaden
+label_cc$KICKWET=Kick ambience
+
+label_cc$KICKCRVOL=Cajon rear
+label_cc$KICKCFVOL=Cajon front
+label_cc$KICKCTUNE=Cajon tune
+label_cc$KICKCENV=Cajon deaden
+
+label_cc$KICKNOISEVOL=Kick pedal noise vol
+
+set_cc7=100
+set_cc10=63
+
+set_cc$KICKRESVOL=100
+set_cc$KICKBATVOL=70
+set_cc$KICKTUNE=63
+set_cc$KICKNOISEVOL=12
+
+set_cc$KICKCRVOL=100
+set_cc$KICKCFVOL=13
+set_cc$KICKCTUNE=63
+
+<global>
+loop_mode=one_shot
+off_mode=normal
+tune=-1200 //Everything is tuned down an octave, then tuned back up with its own tune param
+pan=-100 //Similar for pan - hard left, brought to proper position with param
+pan_oncc10=0 //Disable master pan
+amplitude_oncc7=100
+
+#include "mappings/kick.sfz"
+#include "mappings/kick_cajon.sfz"
+#include "mappings/kick_pedal_noise.sfz"
+#include "mappings/wet/kick.sfz"
+#include "mappings/wet/kick_cajon.sfz"
+#include "mappings/wet/kick_pedal_noise.sfz"
+#include "mappings/wetter/kick.sfz"
+#include "mappings/wetter/kick_cajon.sfz"
+#include "mappings/wetter/kick_pedal_noise.sfz"
+#include "mappings/curves.sfz"

@@ -1,0 +1,86 @@
+<group>group=$HTFOOTWTRGRP
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+off_by=$HTSPLWTRGRP
+<region> key=$HTSPLKEY
+
+<group>group=$HTSPLWTRGRP
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+//Splash also mutes splash, but key=$HTSPLKEY is not part of this silence group
+//Instead splash regions themselves are marked with group=$HTSPLWTRGRP also
+//Kind of a kludge, but keeps the silence from instantly muting the splash
+//while allowing a subsequent splash to mute the current splash
+off_by=$HTSPLWTRGRP
+<region> key=$HTFOOTKEY
+<region> key=$HTIGHTKEY locc$HTPEDAL=$HTIGHTLO hicc$HTPEDAL=$HTIGHTHI
+<region> key=$HTCLOSEKEY locc$HTPEDAL=$HTCLOSELO hicc$HTPEDAL=$HTCLOSEHI
+<region> key=$HTLOOSEKEY locc$HTPEDAL=$HTLOOSELO hicc$HTPEDAL=$HTLOOSEHI
+<region> key=$HTQTRKEY locc$HTPEDAL=$HTQTRLO hicc$HTPEDAL=$HTQTRHI
+<region> key=$HTHALFKEY locc$HTPEDAL=$HTHALFLO hicc$HTPEDAL=$HTHALFHI
+<region> key=$HTOPENKEY locc$HTPEDAL=$HTOPENLO hicc$HTPEDAL=$HTOPENHI
+
+<group>group=$HTIGHTWTRGRP
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+off_by=$HTFOOTWTRGRP
+<region> key=$HTSPLKEY
+<region> key=$HTFOOTKEY
+
+<group>group=$HTCLOSEWTRGRP
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+off_by=$HTIGHTWTRGRP
+<region> key=$HTSPLKEY
+<region> key=$HTFOOTKEY
+<region> key=$HTIGHTKEY locc$HTPEDAL=$HTIGHTLO hicc$HTPEDAL=$HTIGHTHI
+
+<group>group=$HTLOOSEWTRGRP
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+off_by=$HTCLOSEWTRGRP
+<region> key=$HTSPLKEY
+<region> key=$HTFOOTKEY
+<region> key=$HTIGHTKEY locc$HTPEDAL=$HTIGHTLO hicc$HTPEDAL=$HTIGHTHI
+<region> key=$HTCLOSEKEY locc$HTPEDAL=$HTCLOSELO hicc$HTPEDAL=$HTCLOSEHI
+
+<group>group=$HTQTRWTRGRP
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+off_by=$HTLOOSEWTRGRP
+<region> key=$HTSPLKEY
+<region> key=$HTFOOTKEY
+<region> key=$HTIGHTKEY locc$HTPEDAL=$HTIGHTLO hicc$HTPEDAL=$HTIGHTHI
+<region> key=$HTCLOSEKEY locc$HTPEDAL=$HTCLOSELO hicc$HTPEDAL=$HTCLOSEHI
+<region> key=$HTLOOSEKEY locc$HTPEDAL=$HTLOOSELO hicc$HTPEDAL=$HTLOOSEHI
+
+<group>group=$HTHALFWTRGRP
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+off_by=$HTQTRWTRGRP
+<region> key=$HTSPLKEY
+<region> key=$HTFOOTKEY
+<region> key=$HTIGHTKEY locc$HTPEDAL=$HTIGHTLO hicc$HTPEDAL=$HTIGHTHI
+<region> key=$HTCLOSEKEY locc$HTPEDAL=$HTCLOSELO hicc$HTPEDAL=$HTCLOSEHI
+<region> key=$HTLOOSEKEY locc$HTPEDAL=$HTLOOSELO hicc$HTPEDAL=$HTLOOSEHI
+<region> key=$HTQTRKEY locc$HTPEDAL=$HTQTRLO hicc$HTPEDAL=$HTQTRHI
+
+<group>group=$HTOPENWTRGRP
+sample=*silence
+loop_mode=loop_continuous off_mode=fast
+ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
+off_by=$HTHALFWTRGRP
+<region> key=$HTSPLKEY
+<region> key=$HTFOOTKEY
+<region> key=$HTIGHTKEY locc$HTPEDAL=$HTIGHTLO hicc$HTPEDAL=$HTIGHTHI
+<region> key=$HTCLOSEKEY locc$HTPEDAL=$HTCLOSELO hicc$HTPEDAL=$HTCLOSEHI
+<region> key=$HTLOOSEKEY locc$HTPEDAL=$HTLOOSELO hicc$HTPEDAL=$HTLOOSEHI
+<region> key=$HTQTRKEY locc$HTPEDAL=$HTQTRLO hicc$HTPEDAL=$HTQTRHI
+<region> key=$HTHALFKEY locc$HTPEDAL=$HTHALFLO hicc$HTPEDAL=$HTHALFHI
